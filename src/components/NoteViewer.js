@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 
-function NoteViewer({ showNote, title, userId, body, setEditNote }) {
+function NoteViewer({ showNote, title, userId, body, setEditNote, setEnglishNotes, englishNotes }) {
   // const [ editState, setEditState ] = useState(formData);
 
   
@@ -27,6 +27,7 @@ function NoteViewer({ showNote, title, userId, body, setEditNote }) {
       placeholder="placeholder"
       /> */}
       <button onClick={() => setEditNote(showNote)}>Edit</button>
+      <button type="button" onClick={() => setEnglishNotes(englishNotes)}>Translate</button>
     </>
   );
 }

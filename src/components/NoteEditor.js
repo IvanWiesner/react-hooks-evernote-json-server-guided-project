@@ -1,6 +1,6 @@
 import React from "react";
 
-function NoteEditor({ editNote, setEditNote, setShowNote, setNotes, notes }) {
+function NoteEditor({ editNote, setEditNote, setShowNote, setNotes, notes, setEnglishNotes }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     fetch(`http://localhost:3000/notes/${editNote.id}`, {
@@ -20,6 +20,9 @@ function NoteEditor({ editNote, setEditNote, setShowNote, setNotes, notes }) {
           } else {
             return (note)
           }}))
+      setEnglishNotes(
+        ""
+      )
       setShowNote(data)
       setEditNote(
         ""
@@ -54,6 +57,7 @@ function NoteEditor({ editNote, setEditNote, setShowNote, setNotes, notes }) {
         value="Save"
          />
         <button type="button" onClick={() => setEditNote("")} >Cancel</button>
+        
       </div>
     </form>
   );

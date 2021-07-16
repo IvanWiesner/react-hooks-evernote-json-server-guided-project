@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import NoteList from "./NoteList";
+import React from "react";
+
 
 function NoteItem({ title, body, id, userId, setShowNote, note }) {
 

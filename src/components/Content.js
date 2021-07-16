@@ -10,7 +10,7 @@ import Instructions from "./Instructions";
           Then complete the rest of your app before attempting to
           refactor to get this Content component to work.
 */
-function Content({ showNote: {id, userId, title, body}, showNote, setShowNote, setNotes, notes }) {
+function Content({ showNote: {id, userId, title, body}, showNote, setShowNote, setNotes, notes, setEnglishNotes, englishNotes }) {
   const [ editNote, setEditNote ] = useState("")
   const getContent = () => {
     if ( showNote && showNote.id === editNote.id ) {
@@ -23,6 +23,8 @@ function Content({ showNote: {id, userId, title, body}, showNote, setShowNote, s
       />;
     } else if (showNote) {
       return <NoteViewer 
+      englishNotes={englishNotes}
+      setEnglishNotes={setEnglishNotes}
       setEditNote={setEditNote}
       showNote={showNote}
       title={title}
